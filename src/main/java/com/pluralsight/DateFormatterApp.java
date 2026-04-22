@@ -1,8 +1,12 @@
 package com.pluralsight;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class DateFormatterApp {
+
+    static ZonedDateTime gmt = ZonedDateTime.now(ZoneId.of("GMT"));
 
     static void main(String[] args) {
 
@@ -19,12 +23,12 @@ public class DateFormatterApp {
 
         //full name of day, abbreviated month and numerical day, numerical full year
         //and then a formatted time for hours and minutes
-        DateTimeFormatter format4 = DateTimeFormatter.ofPattern("EEEE, MMM dd, yyyy HH:mm");
+        DateTimeFormatter format4 = DateTimeFormatter.ofPattern("EEEE, MMM dd, yyyy hh:mm");
 
         //print them all out
-        System.out.println(now.format(format1));
-        System.out.println(now.format(format2));
-        System.out.println(now.format(format3));
-        System.out.println(now.format(format4));
+        System.out.println(gmt.format(format1));
+        System.out.println(gmt.format(format2));
+        System.out.println(gmt.format(format3));
+        System.out.println(gmt.format(format4));
     }
 }
