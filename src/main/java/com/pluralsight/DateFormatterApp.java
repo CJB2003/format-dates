@@ -25,10 +25,15 @@ public class DateFormatterApp {
         //and then a formatted time for hours and minutes
         DateTimeFormatter format4 = DateTimeFormatter.ofPattern("EEEE, MMM dd, yyyy hh:mm");
 
+        //formatter for the bonus
+        DateTimeFormatter bonus = DateTimeFormatter.ofPattern("hh:mm, dd-MMM-yyyy");
+
         //print them all out
         System.out.println(gmt.format(format1));
         System.out.println(gmt.format(format2));
         System.out.println(gmt.format(format3));
         System.out.println(gmt.format(format4));
+        System.out.println(now.format(bonus));
+
     }
 }
